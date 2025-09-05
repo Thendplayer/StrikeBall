@@ -2,10 +2,10 @@
 
 > Enterprise-grade clean architecture pattern demonstration 3D game in Unity, showcasing modern software engineering principles with cutting-edge dependency injection and event-driven design.
 
-**Unity Version:** 2022.3.25f1
-**Architecture Style:** Clean Architecture with MVP and Repository patterns  
-**Key Technologies:** VContainer DI, MessagePipe Events
-**Developer:** Pol Vega Díaz
+- **Unity Version:** 2022.3.25f1
+- **Architecture Style:** Clean Architecture with MVP and Repository patterns  
+- **Key Technologies:** VContainer DI, MessagePipe Events
+- **Developer:** Pol Vega Díaz
 
 ## 🔧 Core Architecture
 
