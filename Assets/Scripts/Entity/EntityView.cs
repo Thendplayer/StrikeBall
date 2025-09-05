@@ -21,8 +21,8 @@ namespace StrikeBall.Core.Entity
             _cameraTransform = camera.transform;
             
             _rigidbody.useGravity = false;
-            _rigidbody.linearDamping = 5f;
-            _rigidbody.angularDamping = 5f;
+            _rigidbody.drag = 5f;
+            _rigidbody.angularDrag = 5f;
             _rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | 
                                      RigidbodyConstraints.FreezeRotationZ |
                                      RigidbodyConstraints.FreezePositionY;

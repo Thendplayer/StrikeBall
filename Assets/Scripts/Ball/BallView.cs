@@ -9,15 +9,15 @@ namespace StrikeBall.Core.Ball
     {
         [SerializeField] private Rigidbody _rigidbody;
         
-        public Vector3 Direction => _rigidbody ? _rigidbody.linearVelocity : Vector3.zero;
-        public float Speed => _rigidbody ? _rigidbody.linearVelocity.magnitude : 0f;
+        public Vector3 Direction => _rigidbody ? _rigidbody.velocity : Vector3.zero;
+        public float Speed => _rigidbody ? _rigidbody.velocity.magnitude : 0f;
         
         [Inject]
         public void Construct()
         {
             _rigidbody.useGravity = false;
-            _rigidbody.linearDamping = 0f;
-            _rigidbody.angularDamping = 0f;
+            _rigidbody.drag = 0f;
+            _rigidbody.angularDrag = 0f;
             _rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
             _rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | 
                                      RigidbodyConstraints.FreezeRotationZ |
@@ -26,7 +26,7 @@ namespace StrikeBall.Core.Ball
 
         public void ApplyLinearVelocity(float maxSpeed)
         {
-            _rigidbody.linearVelocity = _rigidbody.linearVelocity.normalized * maxSpeed;
+            _rigidbody.velocity = _rigidbody.velocity.normalized * maxSpeed;
         }
         
         public void ApplyForce(Vector3 force)
@@ -37,7 +37,7 @@ namespace StrikeBall.Core.Ball
         public void ResetPosition(Vector3 position)
         {
             transform.position = position;
-            _rigidbody.linearVelocity = Vector3.zero;
+            _rigidbody.velocity = Vector3.zero;
             _rigidbody.angularVelocity = Vector3.zero;
         }
     }
